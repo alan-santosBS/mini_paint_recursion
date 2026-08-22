@@ -1,8 +1,7 @@
-/* Reseta a fonte da página para ficar mais bonita */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #737374;
+    background-color: #1e1e2e;
 }
 
 .topbar {
@@ -21,6 +20,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     background-color: #473883;
+    border-radius: 20px;
 }
 
 .cor-opcao {
@@ -141,3 +141,21 @@ body {
 .cor-12 { background-color: #8E44AD; }
 .cor-13 { background-color: #df47a4; }
 .cor-14 { background-color: #725227; }
+
+.desenv {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.titulo-principal {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.titulo_tamanhoC {
+    color: #fff;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
