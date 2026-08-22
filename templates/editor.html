@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor - Pixel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.0">
+</head>
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <button onclick="window.location.href='/selecionar_tamanho'" class="btn-voltar">← Mudar Tamanho</button>   
+    </div>
+    
+    <div class="editor-container">
+         <h2>Use sua criatividade</h2>
+        <!-- Ferramentas Principais -->
+        <div class="ferramentas">
+            <button id="btn-lapis" class="btn-ferramenta ativo">✏️ Lápis</button>
+            <button id="btn-balde" class="btn-ferramenta">🪣 Balde</button>
+            <button id="btn-limpar" class="btn-ferramenta">🗑️ Limpar</button>
+        </div>
+
+        <!-- Área de Trabalho (Canvas + Sidebar Lateral) -->
+        <div class="area-trabalho">
+            <!-- O Canvas -->
+            <div id="canvas-grid" 
+                 class="canvas-grid grid-{{ tamanho }}" 
+                 data-grid='{{ grid | tojson }}'
+                 data-tamanho="{{ tamanho }}">
+                {% for x in range(tamanho) %}
+                    {% for y in range(tamanho) %}
+                        <div id="pixel-{{x}}-{{y}}" class="pixel cor-0" data-x="{{x}}" data-y="{{y}}"></div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+
+            <!-- Aba Lateral Direita (Paleta Expandida) -->
+            <aside class="sidebar-paleta">
+                <h3>Cores</h3>
+                <div class="paleta-grid" id="paleta-cores">
+                    <div class="cor-opcao cor-1 selecionada" data-cor="1" title="Preto"></div>
+                    <div class="cor-opcao cor-0" data-cor="0" title="Branco / Borracha"></div>
+                    <div class="cor-opcao cor-2" data-cor="2" title="Cinza"></div>
+                    <div class="cor-opcao cor-3" data-cor="3" title="Vermelho"></div>
+                    <div class="cor-opcao cor-4" data-cor="4" title="Laranja"></div>
+                    <div class="cor-opcao cor-5" data-cor="5" title="Amarelo"></div>
+                    <div class="cor-opcao cor-6" data-cor="6" title="Verde"></div>
+                    <div class="cor-opcao cor-7" data-cor="7" title="vesde escuro"></div>
+                    <div class="cor-opcao cor-8" data-cor="8" title="verde claro"></div>
+                    <div class="cor-opcao cor-9" data-cor="9" title="Azul claro"></div>
+                    <div class="cor-opcao cor-10" data-cor="10" title="Azul opaco"></div>
+                    <div class="cor-opcao cor-11" data-cor="11" title="Azul escuro"></div>
+                    <div class="cor-opcao cor-12" data-cor="12" title="Roxo"></div>
+                    <div class="cor-opcao cor-13" data-cor="13" title="Rosa"></div>
+                    <div class="cor-opcao cor-14" data-cor="14" title="Marrom"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

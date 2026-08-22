@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolher Tamanho - Pixel Art</title>
+</head>
+<body class="tela-menu">
+   <div class="card-menu">
+        <h2>Escolha o Tamanho do Canvas</h2>
+        
+        <div class="menu-botoes">
+
+            <button onclick="window.location.href='/editor?tamanho=8'" class="btn-opcao">
+                8 x 8 <span>(Pequeno)</span>
+            </button>
+            
+            <button onclick="window.location.href='/editor?tamanho=16'" class="btn-opcao">
+                16 x 16 <span>(Médio)</span>
+            </button>
+            
+            <button onclick="window.location.href='/editor?tamanho=32'" class="btn-opcao">
+                32 x 32 <span>(Grende)</span>
+            </button>
+        </div>
+
+        <br>
+
+        <button onclick="window.location.href='/'" class="btn-voltar">
+            ← Voltar ao Menu
+        </button>
+    </div>
+</body>
+</html>

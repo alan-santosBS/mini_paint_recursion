@@ -1,0 +1,143 @@
+/* Reseta a fonte da página para ficar mais bonita */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #737374;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    color: #fff;
+}
+
+/* Container do Editor */
+.editor-container {
+    min-height: 50px; /* altura mínima */
+    max-height: 600px; /* altura máxima */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #473883;
+}
+
+.cor-opcao {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.cor-opcao.selecionada {
+    border: 3px solid #ffd700; /* Destaque amarelo na cor selecionada */
+    transform: scale(1.2);
+}
+
+.canvas-grid {
+    display: grid;
+    gap: 1px; /* Espacinho cinza entre os pixels */
+    background-color: #45475a; /* Cor das linhas da grade */
+    border: 2px solid #333;
+    width: fit-content;
+    margin: 0 auto;
+    user-select: none; /* Bloqueia seleção azul de texto/elementos ao arrastar */
+    -webkit-user-drag: none; /* Impede o arrasto fantasma nativo do navegador */
+}
+
+/* Tamanhos das células dependendo da escolha */
+.grid-8 {
+    grid-template-columns: repeat(8, 40px);
+    grid-template-rows: repeat(8, 40px);
+}
+.grid-16 {
+    grid-template-columns: repeat(16, 25px);
+    grid-template-rows: repeat(16, 25px);
+}
+.grid-32 {
+    grid-template-columns: repeat(32, 12px);
+    grid-template-rows: repeat(32, 12px);
+}
+
+/* O quadrado individual (pixel) */
+.pixel {
+    background-color: white; /* Todos começam brancos */
+    cursor: crosshair; /* Muda o mouse para uma cruz de mira */
+}
+
+/* Container que coloca o Canvas e a Sidebar lado a lado */
+.area-trabalho {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    margin-top: 15px;
+    background-color: #473883;
+}
+
+/* Remove a margem automática centralizada do canvas para alinhar com a barra lateral */
+.canvas-grid {
+    margin: 0;
+}
+
+/* Estilização da Aba Lateral */
+.sidebar-paleta {
+    background-color: #5e3fd1;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 3px 3px 0px #000000;
+}
+
+.sidebar-paleta h3 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #faf5f5;
+}
+
+/* Grade de Cores em 3 Colunas */
+.paleta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+/* Botões individuais de cor */
+.cor-opcao {
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: transform 0.1s ease, border-color 0.1s ease;
+}
+
+.cor-opcao:hover {
+    transform: scale(1.15);
+}
+
+.cor-opcao.selecionada {
+    border: 2px solid #000;
+    outline: 2px solid #ffd700;
+    transform: scale(1.15);
+}
+
+/* Mapeamento central de cores do projeto */
+.cor-0 { background-color: #FFFFFF; }
+.cor-1 { background-color: #000000; }
+.cor-2 { background-color: #7F8C8D; }
+.cor-3 { background-color: #E74C3C; }
+.cor-4 { background-color: #E67E22; }
+.cor-5 { background-color: #F1C40F; }
+.cor-6 { background-color: #2ECC71; }
+.cor-7 { background-color: #4da170; }
+.cor-8 { background-color: #00ff00; }
+.cor-9 { background-color: #40c4db; }
+.cor-10 { background-color: #3498DB; }
+.cor-11 { background-color: #071ce0; }
+.cor-12 { background-color: #8E44AD; }
+.cor-13 { background-color: #df47a4; }
+.cor-14 { background-color: #725227; }
