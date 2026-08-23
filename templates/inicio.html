@@ -4,19 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mini_paint_recursion</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.2">
+    <title>Mini Paint Recursion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.5">
 </head>
 
 <body class="tela-menu">
-    <div class="card-manu">
-        <h1 class="titulo-principal">Mini Paint Recursion</h1>
+    <div class="card-menu">
+        <!-- Lado Esquerdo -->
+        <div class="menu-left">
+            <div class="logo-area">
+                <h1 class="titulo-principal">Mini Paint <span class="destaque">Recursion</span></h1>
+            </div>
 
-        <div class="botoes-menu">
-            <button class="btn-iniciar" onclick="window.location.href='/selecionar_tamanho'">INICIAR</button><br><br>
-            <button class="btn-sobre" onclick="window.location.href='/sobre'">SOBRE</button>
+            <p class="subtitulo">🎨 Use sua criatividade com preenchimento recursivo</p>
+
+            <div class="botoes-menu">
+                <button class="btn-iniciar" onclick="window.location.href='/selecionar_tamanho'">
+                    🚀 INICIAR
+                </button>
+                <button class="btn-sobre" onclick="window.location.href='/sobre'">
+                    ℹ️ SOBRE
+                </button>
+            </div>
+
+            <footer class="menu-footer">
+                <small>IFPE - Algoritmos e Estruturas de Dados</small>
+            </footer>
+        </div>
+
+        <!-- Lado Direito - Paleta de cores -->
+        <div class="menu-right">
+            <img src="{{ url_for('static', filename='images/paleta-de-cores.png') }}" alt="Paleta de cores" class="paleta-img">
         </div>
     </div>
 </body>
-
 </html>
