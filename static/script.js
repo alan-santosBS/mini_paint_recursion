@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pixel) pixel.className = `pixel cor-${cor}`;
     }
 
-    // Envia a matriz para a API do Flask e atualiza a tela (Balde de Tinta)
+    // Envia a matriz para o Flask e atualiza a tela (Balde de Tinta)
     async function pintarComBalde(x, y) {
         try {
             const resposta = await fetch('/balde_tinta', {

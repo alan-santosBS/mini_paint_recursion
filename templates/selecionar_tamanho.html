@@ -8,27 +8,34 @@
 </head>
 <body class="tela-menu">
    <div class="card-menu">
-        <h2 class="titulo_tamanhoC">Escolha o Tamanho do Canvas</h2>
+        <h2 class="titulo_tamanhoC">Escolha o Tamanho do Painel</h2>
         
-        <div class="menu-botoes">
+        <div class="container-cards">
 
-            <button onclick="window.location.href='/editor?tamanho=8'" class="btn-opcao">
-                8 x 8 <span>(Pequeno)</span>
-            </button>
-            
-            <button onclick="window.location.href='/editor?tamanho=16'" class="btn-opcao">
-                16 x 16 <span>(Médio)</span>
-            </button>
-            
-            <button onclick="window.location.href='/editor?tamanho=32'" class="btn-opcao">
-                32 x 32 <span>(Grende)</span>
-            </button>
+            <div class="card-opcao" onclick="window.location.href='/editor?tamanho=8'">
+                <img src="{{ url_for('static', filename='images/8x8.png') }}" alt="Matriz 8x8">
+                <span>8 x 8</span>
+                <small>Pequeno</small>
+            </div>
+
+            <div class="card-opcao" onclick="window.location.href='/editor?tamanho=16'">
+                <img src="{{ url_for('static', filename='images/16x16.png') }}" alt="Matriz 16x16">
+                <span>16 x 16</span>
+                <small>Médio</small>
+            </div>
+
+            <div class="card-opcao" onclick="window.location.href='/editor?tamanho=32'">
+                <img src="{{ url_for('static', filename='images/32x32.png') }}" alt="Matriz 32x32">
+                <span>32 x 32</span>
+                <small>Grande</small>
+            </div>
+
         </div>
 
         <br>
 
-        <button onclick="window.location.href='/'" class="btn-voltar">
-            ← Voltar ao Menu
+        <button onclick="window.location.href='/'" class="beautiful-button">
+            Voltar ao Menu
         </button>
     </div>
 </body>

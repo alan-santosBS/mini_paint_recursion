@@ -1,3 +1,69 @@
+/* Layout da Tela de Seleção */
+
+body.tela-selecao {
+    background-color: #1e1e28;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container-cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 35px 0;
+}
+
+/* Card Clicável */
+.card-opcao {
+    background-color: #2e2e3e;
+    border: 3px solid #000000;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 170px;
+    
+    /* Sombra inicial estilo Cartoon */
+    box-shadow: 5px 5px 0px #000000;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Animação de Elevação ao Passar o Mouse */
+.card-opcao:hover {
+    transform: translateY(-8px);
+    box-shadow: 5px 13px 0px #000000;
+}
+
+.card-opcao img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    pointer-events: none; /* Impede que o usuário "arraste" a imagem */
+}
+
+.card-opcao span {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.card-opcao small {
+    color: #a0a0b0;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -12,6 +78,8 @@ body {
     color: #fff;
 }
 
+
+
 /* Container do Editor */
 .editor-container {
     min-height: 50px; /* altura mínima */
@@ -21,6 +89,10 @@ body {
     padding: 20px;
     background-color: #473883;
     border-radius: 20px;
+}
+
+.titulo-editor{
+    color:#ffffff
 }
 
 .cor-opcao {
@@ -39,12 +111,19 @@ body {
     display: grid;
     gap: 1px; /* Espacinho cinza entre os pixels */
     background-color: #45475a; /* Cor das linhas da grade */
-    border: 2px solid #333;
+
+    border: 3px solid #333;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0px #000000; /* Sombra para dar efeito de profundidade */
+
+    overflow: hidden;
     width: fit-content;
     margin: 0 auto;
     user-select: none; /* Bloqueia seleção azul de texto/elementos ao arrastar */
     -webkit-user-drag: none; /* Impede o arrasto fantasma nativo do navegador */
 }
+
+
 
 /* Tamanhos das células dependendo da escolha */
 .grid-8 {
@@ -60,11 +139,14 @@ body {
     grid-template-rows: repeat(32, 12px);
 }
 
+
+
 /* O quadrado individual (pixel) */
 .pixel {
     background-color: white; /* Todos começam brancos */
     cursor: crosshair; /* Muda o mouse para uma cruz de mira */
 }
+
 
 /* Container que coloca o Canvas e a Sidebar lado a lado */
 .area-trabalho {
@@ -81,7 +163,9 @@ body {
     margin: 0;
 }
 
-/* Estilização da Aba Lateral */
+
+
+/* Estilização da Aba Lateral de cores*/
 .sidebar-paleta {
     background-color: #5e3fd1;
     border: 2px solid #000000;
@@ -98,6 +182,7 @@ body {
     color: #faf5f5;
 }
 
+
 /* Grade de Cores em 3 Colunas */
 .paleta-grid {
     display: grid;
@@ -105,7 +190,9 @@ body {
     gap: 8px;
 }
 
-/* Botões individuais de cor */
+
+
+/* linha ao redor do botão de cor */
 .cor-opcao {
     width: 28px;
     height: 28px;
@@ -125,7 +212,10 @@ body {
     transform: scale(1.15);
 }
 
+
+
 /* Mapeamento central de cores do projeto */
+
 .cor-0 { background-color: #FFFFFF; }
 .cor-1 { background-color: #000000; }
 .cor-2 { background-color: #7F8C8D; }
@@ -158,4 +248,126 @@ body {
     color: #fff;
     font-size: 2.5em;
     margin-bottom: 50px;
+}
+
+/* Botão com animação de partículas e gradiente */
+
+/* From Uiverse.io by KlaujonRuamni */ 
+.beautiful-button {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+ /* Gradient background */
+  color: white;
+ /* White text color */
+  font-family: "Segoe UI", sans-serif;
+ /* Stylish and legible font */
+  font-weight: bold;
+  font-size: 18px;
+ /* Large font size */
+  border: none;
+ /* No border */
+  border-radius: 30px;
+ /* Rounded corners */
+  padding: 14px 28px;
+ /* Large padding */
+  cursor: pointer;
+ /* Cursor on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ /* Subtle shadow */
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+ /* Smooth transition */
+}
+
+/* Hover animation */
+.beautiful-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+/* Click animation */
+.beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Shimmer animation */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Particle animation */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+
+/* Botoes de Ação */
+
+/* Container centralizado para as ferramentas */
+.ferramentas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os botões */
+    margin-bottom: 25px;
+}
+
+/* Estilo Base das Ferramentas */
+.btn-ferramenta {
+    background-color: #2e2e3e;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    /* Sombra pop-out no padrão da página */
+    box-shadow: 4px 4px 0px #000000;
+    transition: all 0.15s ease;
+    
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Efeito ao passar o mouse */
+.btn-ferramenta:hover {
+    background-color: #3e3e52;
+    transform: translateY(-2px);
+    box-shadow: 4px 6px 0px #000000;
+}
+
+/* ESTADO SELECIONADO (.ativo) */
+.btn-ferramenta.ativo {
+    background-color: #ffcc00; /* Amarelo chamativo para indicar seleção */
+    color: #000000;             /* Texto em preto para dar contraste */
+    
+    /* Efeito de afundamento (botão pressionado) */
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0px #000000;
+}
+
+/* Efeito tátil instantâneo no botão Limpar (ação rápida) */
+#btn-limpar:active {
+    background-color: #e74c3c;
+    color: #ffffff;
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0px #000000;
 }

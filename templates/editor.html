@@ -9,19 +9,19 @@
 <body>
     <!-- Topbar -->
     <div class="topbar">
-        <button onclick="window.location.href='/selecionar_tamanho'" class="btn-voltar">← Mudar Tamanho</button>   
+        <button onclick="window.location.href='/selecionar_tamanho'" class="beautiful-button">Voltar</button>   
     </div>
     
     <div class="editor-container">
-         <h2>Use sua criatividade</h2>
-        <!-- Ferramentas Principais -->
+         <h2 class="titulo-editor">Use sua criatividade</h2>
+         
         <div class="ferramentas">
             <button id="btn-lapis" class="btn-ferramenta ativo">✏️ Lápis</button>
             <button id="btn-balde" class="btn-ferramenta">🪣 Balde</button>
             <button id="btn-limpar" class="btn-ferramenta">🗑️ Limpar</button>
         </div>
 
-        <!-- Área de Trabalho (Canvas + Sidebar Lateral) -->
+        <!-- conteiner de Trabalho  -->
         <div class="area-trabalho">
             <!-- O Canvas -->
             <div id="canvas-grid" 
@@ -35,7 +35,7 @@
                 {% endfor %}
             </div>
 
-            <!-- Aba Lateral Direita (Paleta Expandida) -->
+            <!-- Aba Lateral de cores -->
             <aside class="sidebar-paleta">
                 <h3>Cores</h3>
                 <div class="paleta-grid" id="paleta-cores">
