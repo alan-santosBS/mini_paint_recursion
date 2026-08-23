@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editor - Pixel</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.2">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/paleta-de-cores.png') }}">
 </head>
+
 <body>
     <!-- Topbar -->
     <div class="topbar">
-        <button onclick="window.location.href='/selecionar_tamanho'" class="beautiful-button">Voltar</button>   
+        <button onclick="window.location.href='/selecionar_tamanho'" class="beautiful-button">Voltar</button>
     </div>
-    
+
     <div class="editor-container">
          <h2 class="titulo-editor">Use sua criatividade</h2>
-         
+
         <div class="ferramentas">
             <button id="btn-lapis" class="btn-ferramenta ativo">✏️ Lápis</button>
             <button id="btn-balde" class="btn-ferramenta">🪣 Balde</button>
@@ -24,8 +26,8 @@
         <!-- conteiner de Trabalho  -->
         <div class="area-trabalho">
             <!-- O Canvas -->
-            <div id="canvas-grid" 
-                 class="canvas-grid grid-{{ tamanho }}" 
+            <div id="canvas-grid"
+                 class="canvas-grid grid-{{ tamanho }}"
                  data-grid='{{ grid | tojson }}'
                  data-tamanho="{{ tamanho }}">
                 {% for x in range(tamanho) %}
