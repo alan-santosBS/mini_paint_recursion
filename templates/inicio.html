@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mini_paint_recursion</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.2">
+    <title>Mini Paint Recursion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.9">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/paleta-de-cores.png') }}">
 </head>
 
 <body class="tela-menu">
-    <div class="card-manu">
-        <h1 class="titulo-principal">Mini Paint Recursion</h1>
+    <div class="card-menu" style="display: flex; align-items: center; justify-content: space-between; gap: 40px; max-width: 1000px; padding: 50px 60px;">
 
-        <div class="botoes-menu">
-            <button class="btn-iniciar" onclick="window.location.href='/selecionar_tamanho'">INICIAR</button><br><br>
-            <button class="btn-sobre" onclick="window.location.href='/sobre'">SOBRE</button>
+        <!-- Lado Esquerdo - Texto e Botões -->
+        <div style="flex: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left;">
+            <!-- Título -->
+            <h1 class="titulo-principal" style="margin-bottom: 10px; font-size: 3rem;">
+                Mini Paint <span>Recursion</span>
+            </h1>
+
+            <p class="subtitulo" style="margin-bottom: 35px;">
+                Use sua criatividade com preenchimento recursivo
+            </p>
+
+            <!-- Botões -->
+            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                <button onclick="window.location.href='/selecionar_tamanho'" class="beautiful-button">
+                    INICIAR
+                </button>
+                <button onclick="window.location.href='/sobre'" class="beautiful-button">
+                    SOBRE
+                </button>
+            </div>
+
+            <!-- Rodapé -->
+            <footer class="menu-footer" style="margin-top: 40px; width: 100%;">
+              <span style="font-size: 1rem; color: rgba(255,255,255,0.5);">IFPE - Algoritmos e Estruturas de Dados</span>
+          </footer>
+        </div>
+
+        <!-- Lado Direito - Paleta de cores -->
+        <div style="flex: 0 0 300px; display: flex; justify-content: center; align-items: center;">
+            <img src="{{ url_for('static', filename='images/paleta-de-cores.png') }}"
+                 alt="Paleta de cores"
+                 style="max-width: 100%; height: auto; max-height: 350px; filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.3)); border-radius: 15px; transition: all 0.4s ease;">
         </div>
     </div>
 </body>
-
 </html>

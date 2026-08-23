@@ -1,23 +1,94 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre os Desenvolvedores</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=1.2">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2.1">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/paleta-de-cores.png') }}">
 </head>
 
 <body class="tela-menu">
-    <div class="card-menu">
-        <h2 class="desenv">Desenvolvedores</h2>
+    <div class="card-menu" style="max-width: 750px; padding: 45px 50px; flex-direction: column; text-align: center;">
 
-        <div class="lista-devs">
-            <!-- devs -->
+        <!-- Título -->
+        <h2 style="color: #ffffff; font-size: 2.5rem; font-weight: 800; margin-bottom: 5px; letter-spacing: -0.5px;">
+            Desenvolvedores
+        </h2>
+        <p style="color: #e3f2fd; font-size: 1.05rem; margin-bottom: 30px; font-weight: 300;">
+            Conheça o time por trás do Mini Paint Recursion
+        </p>
+
+        <!-- Cards dos desenvolvedores -->
+        <div style="width: 100%; display: flex; flex-direction: column; gap: 14px;">
+
+            <!-- ALAN SANTOS -->
+            <a href="https://github.com/alan-santosBS" target="_blank" class="dev-link" style="text-decoration: none; display: block;">
+                <div class="dev-card" style="display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,0.06); padding: 14px 20px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s ease; cursor: pointer;">
+                    <div style="width: 55px; height: 55px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(66, 165, 245, 0.3);">
+                        <img src="{{ url_for('static', filename='images/alan.jpeg') }}" alt="Alan Santos" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="text-align: left; flex: 1;">
+                        <h3 style="margin: 0; font-size: 1.2rem; color: #ffffff;">Alan Santos</h3>
+                        <p style="margin: 2px 0; color: #bbdefb; font-size: 0.9rem;">Estudante de TSI - IFPE - 4º Período</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- LUHAN FELIPE -->
+            <a href="https://github.com/luhanfelipe" target="_blank" class="dev-link" style="text-decoration: none; display: block;">
+                <div class="dev-card" style="display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,0.06); padding: 14px 20px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s ease; cursor: pointer;">
+                    <div style="width: 55px; height: 55px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(66, 165, 245, 0.3);">
+                        <img src="{{ url_for('static', filename='images/luhan.jpg') }}" alt="Luhan Felipe" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="text-align: left; flex: 1;">
+                        <h3 style="margin: 0; font-size: 1.2rem; color: #ffffff;">Luhan Felipe</h3>
+                        <p style="margin: 2px 0; color: #bbdefb; font-size: 0.9rem;">Estudante de TSI - IFPE - 4º Período</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- LUÍSA VITÓRIA -->
+            <a href="https://github.com/luisavmf0" target="_blank" class="dev-link" style="text-decoration: none; display: block;">
+                <div class="dev-card" style="display: flex; align-items: center; gap: 18px; background: rgba(255,255,255,0.06); padding: 14px 20px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); transition: all 0.3s ease; cursor: pointer;">
+                    <div style="width: 55px; height: 55px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid rgba(66, 165, 245, 0.3);">
+                        <img src="{{ url_for('static', filename='images/luisa.jpeg') }}" alt="Luísa Vitória" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="text-align: left; flex: 1;">
+                        <h3 style="margin: 0; font-size: 1.2rem; color: #ffffff;">Luísa Vitória</h3>
+                        <p style="margin: 2px 0; color: #bbdefb; font-size: 0.9rem;">Estudante de TSI - IFPE - 4º Período</p>
+                    </div>
+                </div>
+            </a>
         </div>
-        <a href="/" class="btn-voltar">Voltar ao Menu</a>
+
+        <!-- Sobre o projeto - versão corrigida -->
+        <div style="width: 100%; text-align: left; background: rgba(255,255,255,0.05); padding: 20px 24px; border-radius: 16px; margin: 25px 0 20px 0; border: 1px solid rgba(255,255,255,0.06); box-sizing: border-box; overflow-wrap: break-word; word-wrap: break-word;">
+            <h3 style="margin-top: 0; color: #ffffff; font-size: 1.1rem;">Sobre o Projeto</h3>
+            <p style="color: #bbdefb; line-height: 1.7; font-size: 0.95rem; margin-bottom: 12px;">
+                O <strong style="color: #ffffff;">Mini Paint Recursion</strong> é uma aplicação web que simula
+                uma ferramenta de desenho com pixels, onde o usuário pode criar pequenas artes em uma grade.
+                O destaque do projeto é o uso do algoritmo de <strong style="color: #ffffff;">Flood Fill</strong>
+                (preenchimento por inundação) implementado de forma <strong style="color: #ffffff;">recursiva</strong>,
+                que permite preencher áreas inteiras com uma cor, similar à ferramenta de balde de tinta.
+            </p>
+            <p style="color: #bbdefb; line-height: 1.7; font-size: 0.95rem; margin-bottom: 12px;">
+                O projeto foi desenvolvido como trabalho da disciplina de <strong style="color: #ffffff;">Algoritmos e Estruturas de Dados</strong>
+                no curso de <strong style="color: #ffffff;">Tecnologia em Sistemas para Internet (TSI)</strong> do IFPE.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <span style="background: rgba(66, 165, 245, 0.15); color: #64b5f6; padding: 4px 14px; border-radius: 14px; font-size: 0.75rem; font-weight: 600;">Python</span>
+                <span style="background: rgba(66, 165, 245, 0.15); color: #64b5f6; padding: 4px 14px; border-radius: 14px; font-size: 0.75rem; font-weight: 600;">HTML</span>
+                <span style="background: rgba(66, 165, 245, 0.15); color: #64b5f6; padding: 4px 14px; border-radius: 14px; font-size: 0.75rem; font-weight: 600;">Flask</span>
+                <span style="background: rgba(66, 165, 245, 0.15); color: #64b5f6; padding: 4px 14px; border-radius: 14px; font-size: 0.75rem; font-weight: 600;">CSS3</span>
+                <span style="background: rgba(66, 165, 245, 0.15); color: #64b5f6; padding: 4px 14px; border-radius: 14px; font-size: 0.75rem; font-weight: 600;">JavaScript</span>
+            </div>
+        </div>
+
+        <!-- Botão Voltar -->
+        <button onclick="window.location.href='/'" class="beautiful-button" style="margin-top: 5px;">
+            ⬅ Voltar ao Menu
+        </button>
     </div>
 </body>
-
 </html>

@@ -29,7 +29,7 @@ body.tela-selecao {
     align-items: center;
     cursor: pointer;
     width: 170px;
-    
+
     /* Sombra inicial estilo Cartoon */
     box-shadow: 5px 5px 0px #000000;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -252,7 +252,7 @@ body {
 
 /* Botão com animação de partículas e gradiente */
 
-/* From Uiverse.io by KlaujonRuamni */ 
+/* From Uiverse.io by KlaujonRuamni */
 .beautiful-button {
   position: relative;
   display: inline-block;
@@ -337,11 +337,11 @@ body {
     border: 3px solid #000000;
     border-radius: 10px;
     cursor: pointer;
-    
+
     /* Sombra pop-out no padrão da página */
     box-shadow: 4px 4px 0px #000000;
     transition: all 0.15s ease;
-    
+
     display: flex;
     align-items: center;
     gap: 8px;
@@ -358,7 +358,7 @@ body {
 .btn-ferramenta.ativo {
     background-color: #ffcc00; /* Amarelo chamativo para indicar seleção */
     color: #000000;             /* Texto em preto para dar contraste */
-    
+
     /* Efeito de afundamento (botão pressionado) */
     transform: translate(3px, 3px);
     box-shadow: 1px 1px 0px #000000;
@@ -370,4 +370,225 @@ body {
     color: #ffffff;
     transform: translate(3px, 3px);
     box-shadow: 1px 1px 0px #000000;
+}
+
+/* ============================================
+   PERSONALIZAÇÃO DA TELA INICIAL E SOBRE
+   (Mantém o estilo do amigo, mas com cores azuis)
+   ============================================ */
+
+/* ----- Fundo azul vibrante APENAS nessas telas ----- */
+body.tela-menu {
+    background: linear-gradient(135deg, #1a237e, #283593, #3949ab, #5c6bc0);
+    background-size: 400% 400%;
+    animation: gradiente-azul 8s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Animação suave do fundo */
+@keyframes gradiente-azul {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ----- Card mais claro e com vidro (glassmorphism) ----- */
+body.tela-menu .card-menu {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 30px;
+    padding: 50px 60px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* ----- Título com degradê azul-roxo ----- */
+body.tela-menu .titulo-principal {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.tela-menu .titulo-principal span {
+    background: linear-gradient(135deg, #64b5f6, #42a5f5, #7c4ddb, #b388d4);
+    background-size: 300% 300%;
+    animation: brilho-azul 4s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@keyframes brilho-azul {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ----- Subtítulo mais claro ----- */
+body.tela-menu .subtitulo {
+    color: #e3f2fd;
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- Rodapé ----- */
+body.tela-menu .menu-footer {
+    margin-top: 40px;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 18px;
+    width: 100%;
+}
+
+/* ----- BOTÕES .beautiful-button com tema azul (SÓ na tela inicial) ----- */
+body.tela-menu .beautiful-button {
+    background: linear-gradient(135deg, #42a5f5, #1a73e8, #0d47a1);
+    box-shadow: 0 8px 30px rgba(26, 115, 232, 0.5);
+    animation: none; /* Remove a animação original */
+    transition: all 0.3s ease;
+}
+
+body.tela-menu .beautiful-button:hover {
+    background: linear-gradient(135deg, #64b5f6, #42a5f5, #1a73e8);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 15px 45px rgba(26, 115, 232, 0.7);
+    animation: none;
+}
+
+body.tela-menu .beautiful-button:active {
+    transform: scale(0.95);
+}
+
+/* ----- Estilo para os cards dos desenvolvedores (tela sobre) ----- */
+body.tela-menu .dev-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 14px 20px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+body.tela-menu .dev-card:hover {
+    background: rgba(66, 165, 245, 0.15);
+    transform: translateX(8px);
+    border-color: #42a5f5;
+    box-shadow: 0 5px 25px rgba(66, 165, 245, 0.1);
+}
+
+body.tela-menu .dev-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #6C63FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+body.tela-menu .dev-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+body.tela-menu .dev-info p {
+    margin: 2px 0;
+    color: #bbdefb;
+    font-size: 0.85rem;
+}
+
+body.tela-menu .dev-role {
+    display: inline-block;
+    background: rgba(66, 165, 245, 0.2);
+    color: #64b5f6;
+    padding: 2px 12px;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+/* ----- Sobre o projeto (tela sobre) ----- */
+body.tela-menu .sobre-projeto {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 18px 20px;
+    border-radius: 14px;
+    margin: 15px 0;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.tela-menu .sobre-projeto h3 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+body.tela-menu .sobre-projeto p {
+    color: #bbdefb;
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+body.tela-menu .tag {
+    background: rgba(66, 165, 245, 0.15);
+    color: #64b5f6;
+    padding: 4px 14px;
+    border-radius: 14px;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+/* ----- Link do dev (remove sublinhado) ----- */
+body.tela-menu .dev-link {
+    text-decoration: none;
+    display: block;
+}
+
+/* ----- Responsividade ----- */
+@media (max-width: 850px) {
+    body.tela-menu .card-menu {
+        padding: 30px 25px;
+    }
+
+    body.tela-menu .titulo-principal {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body.tela-menu .card-menu {
+        padding: 20px 15px;
+    }
+
+    body.tela-menu .titulo-principal {
+        font-size: 1.7rem;
+    }
+
+    body.tela-menu .beautiful-button {
+        padding: 12px 25px;
+        font-size: 0.85rem;
+    }
 }
