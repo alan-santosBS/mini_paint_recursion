@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         estaDesenhando = false;
     });
 
-    // 1. Alternância de Ferramentas (Lápis vs Balde)
+    // 1. Alternância de Ferramentas (Lápis/Balde)
     function selecionarFerramenta(ferramenta) {
         ferramentaAtiva = ferramenta;
         btnLapis?.classList.remove('ativo');
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (pixel) pixel.className = `pixel cor-${cor}`;
     }
 
-    // Envia a matriz para o Flask e atualiza a tela (Balde de Tinta)
+    // Envia a matriz para o Flask e atualiza a tela, função mensageiro(Balde de Tinta)
     async function pintarComBalde(x, y) {
         try {
             const resposta = await fetch('/balde_tinta', {
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Atualiza todos os quadradinhos da tela após o retorno do Python
+    // Atualiza todos os quadradinhos da tela após o retorno do Python (traduz a matriz numerica em imagem na tela)
     function redesenharCanvas() {
         for (let x = 0; x < tamanho; x++) {
             for (let y = 0; y < tamanho; y++) {
