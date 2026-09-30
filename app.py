@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 
+teste para aprendizado
+
 app = Flask(__name__)
 
 # classe recursiva para o balde de tinta
@@ -18,9 +20,7 @@ def flood_fill(matriz, x, y, cor_alvo, nova_cor):
 
     
     flood_fill(matriz, x - 1, y, cor_alvo, nova_cor)# cima
-    flood_fill(matriz, x + 1, y, cor_alvo, nova_cor)# baixo
-    flood_fill(matriz, x, y - 1, cor_alvo, nova_cor)# esquerda
-    flood_fill(matriz, x, y + 1, cor_alvo, nova_cor)# direita
+
 
 @app.route('/')
 def inicio():
